@@ -33,5 +33,7 @@ declare module 'react-navigation-addon-search-layout' {
     renderResults?: () => React.ReactElement | null;
   }
 
-  export default class SearchLayout extends React.Component<SearchLayoutProps> {}
+  export default class SearchLayout extends React.Component<
+    SearchLayoutProps
+  > {}
 }

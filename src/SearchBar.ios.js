@@ -33,15 +33,16 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
   static defaultProps = {
     placeholder: 'Search',
     placeholderTextColor: '#ccc',
-  }
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback
           hitSlop={{ top: 10, left: 10, bottom: 5, right: 10 }}
-          onPress={this._handlePress}>
-          <View style={styles.searchContainer} pointerEvents='box-only'>
+          onPress={this._handlePress}
+        >
+          <View style={styles.searchContainer} pointerEvents="box-only">
             <TextInput
               editable={false}
               placeholder={this.props.placeholder}
@@ -144,17 +145,20 @@ export default class SearchBar extends React.PureComponent {
           style={[
             styles.buttonContainer,
             { opacity: showCancelButton ? 1 : 0 },
-          ]}>
+          ]}
+        >
           <TouchableOpacity
             style={styles.button}
             hitSlop={{ top: 15, bottom: 15, left: 15, right: 20 }}
             onLayout={this._handleLayoutCancelButton}
-            onPress={this._handlePressCancelButton}>
+            onPress={this._handlePressCancelButton}
+          >
             <Text
               style={{
                 fontSize: 17,
                 color: this.props.tintColor || '#007AFF',
-              }}>
+              }}
+            >
               {this.props.cancelButtonText || 'Cancel'}
             </Text>
           </TouchableOpacity>

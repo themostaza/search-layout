@@ -40,28 +40,31 @@ export default class SearchBar extends React.PureComponent {
           style={[styles.searchInput, searchInputStyle]}
         />
         <View
-          style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
-          {this.state.text
-            ? <Touchable
-                onPress={this._handleClear}
-                hitSlop={{top: 15, left: 10, right: 15, bottom: 15}}
-                style={{ padding: 5 }}
-                background={Touchable.Ripple(this.props.tintColor, true)}>
-                <Ionicons
-                  name="md-close"
-                  size={25}
-                  color={this.props.tintColor}
-                />
-              </Touchable>
-            : null}
+          style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}
+        >
+          {this.state.text ? (
+            <Touchable
+              onPress={this._handleClear}
+              hitSlop={{ top: 15, left: 10, right: 15, bottom: 15 }}
+              style={{ padding: 5 }}
+              background={Touchable.Ripple(this.props.tintColor, true)}
+            >
+              <Ionicons
+                name="md-close"
+                size={25}
+                color={this.props.tintColor}
+              />
+            </Touchable>
+          ) : null}
         </View>
       </View>
     );
   }
 
   _handleClear = () => {
-    this._handleChangeText('')
+    this._handleChangeText('');
   };
+
   _handleChangeText = text => {
     this.setState({ text });
     this.props.onChangeQuery && this.props.onChangeQuery(text);
