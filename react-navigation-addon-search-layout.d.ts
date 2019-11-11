@@ -20,6 +20,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** Color of the placeholder text that is visible when the user has not entered any input into the search box **/
     placeholderTextColor?: string;
 
+    /** Placeholder text that is visible when the user has not entered any input into the search box **/
+    placeholderText?: string;
+
     /** Color of text that the user enters into the search box **/
     searchInputTextColor?: string;
 

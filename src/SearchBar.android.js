@@ -28,7 +28,7 @@ export default class SearchBar extends React.PureComponent {
           ref={view => {
             this._textInput = view;
           }}
-          placeholder="Search"
+          placeholder={this.props.placeholderText}
           placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
           value={this.state.text}
           autoCapitalize="none"
