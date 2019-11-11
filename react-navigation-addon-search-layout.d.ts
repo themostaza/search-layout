@@ -21,7 +21,7 @@ declare module 'react-navigation-addon-search-layout' {
     placeholderTextColor?: string;
 
     /** Color of text that the user enters into the search box **/
-    textColor?: string;
+    searchInputTextColor?: string;
 
     /** Underline color of the text input on Android **/
     searchInputUnderlineColorAndroid?: string;
