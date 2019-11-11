@@ -71,15 +71,13 @@ export default class SearchBar extends React.PureComponent {
     inputWidth: SearchContainerWidth,
   };
 
-  _textInput: TextInput;
-
   componentDidMount() {
     requestAnimationFrame(() => {
       this._textInput.focus();
     });
   }
 
-  _handleLayoutCancelButton = (e: Object) => {
+  _handleLayoutCancelButton = e => {
     if (this.state.showCancelButton) {
       return;
     }
