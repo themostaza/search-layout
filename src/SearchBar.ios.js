@@ -129,6 +129,7 @@ export default class SearchBar extends React.PureComponent {
             accessibilityRole="search"
             placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
             onSubmitEditing={this._handleSubmit}
+            allowFontScaling={false}
             style={[styles.searchInput, searchInputStyle]}
           />
 
@@ -158,6 +159,7 @@ export default class SearchBar extends React.PureComponent {
                 fontSize: 17,
                 color: this.props.tintColor || '#007AFF',
               }}
+              allowFontScaling={false}
             >
               {this.props.cancelButtonText || 'Cancel'}
             </Text>
