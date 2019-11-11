@@ -1,1 +1,1 @@
-export default from './src/SearchLayout';
+export { default } from './src/SearchLayout';
