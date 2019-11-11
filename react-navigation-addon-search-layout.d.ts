@@ -14,6 +14,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** Tint color of the header that contains the search bar. Used to color the back buttoni on Android, the cancel button on iOS, and the color of and ripple around the clear button on Android **/
     headerTintColor?: string;
 
+    /** Cancel button text. Defaults to 'Cancel'. (iOS only) */
+    cancelButtonText?: string;
+
     /** Color of the placeholder text that is visible when the user has not entered any input into the search box **/
     placeholderTextColor?: string;
 
