@@ -33,6 +33,7 @@ export default class SearchBar extends React.PureComponent {
           value={this.state.text}
           autoCapitalize="none"
           autoCorrect={false}
+          accessibilityRole="search"
           selectionColor={this.props.selectionColor}
           underlineColorAndroid={this.props.underlineColorAndroid || '#ccc'}
           onSubmitEditing={this._handleSubmit}
@@ -48,6 +49,7 @@ export default class SearchBar extends React.PureComponent {
               hitSlop={{ top: 15, left: 10, right: 15, bottom: 15 }}
               style={{ padding: 5 }}
               background={Touchable.Ripple(this.props.tintColor, true)}
+              accessibilityRole="button"
             >
               <Ionicons
                 name="md-close"

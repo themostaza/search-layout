@@ -126,6 +126,7 @@ export default class SearchBar extends React.PureComponent {
             autoCorrect={false}
             returnKeyType="search"
             placeholder={this.props.placeholderText}
+            accessibilityRole="search"
             placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
             onSubmitEditing={this._handleSubmit}
             style={[styles.searchInput, searchInputStyle]}
@@ -150,6 +151,7 @@ export default class SearchBar extends React.PureComponent {
             hitSlop={{ top: 15, bottom: 15, left: 15, right: 20 }}
             onLayout={this._handleLayoutCancelButton}
             onPress={this._handlePressCancelButton}
+            accessibilityRole="button"
           >
             <Text
               style={{
