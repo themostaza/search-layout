@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { HeaderBackButton } from 'react-navigation-stack';
-import { getInset, getStatusBarHeight } from 'react-native-safe-area-view';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 
 // @todo: make this work properly when in landscape
@@ -27,11 +26,12 @@ export default class Header extends React.PureComponent {
     // need to use a more reliable and cross-platform API when one exists, like
     // LayoutContext. We also don't know if it's translucent or not on Android
     // and depend on react-native-safe-area-view to tell us.
-    const ANDROID_STATUS_BAR_HEIGHT = getStatusBarHeight
-      ? getStatusBarHeight()
-      : StatusBar.currentHeight;
+    const ANDROID_STATUSBAR_HEIGHT = this.props.traslucentStatusbar
+      ? StatusBar.currentHeight
+      : 0;
+    const IOS_STATUSBAR_HEIGHT = hasNotch ? 40 : 25;
     const STATUSBAR_HEIGHT =
-      Platform.OS === 'ios' ? (hasNotch ? 40 : 25) : ANDROID_STATUS_BAR_HEIGHT;
+      Platform.OS === 'ios' ? IOS_STATUSBAR_HEIGHT : ANDROID_STATUSBAR_HEIGHT;
 
     let platformContainerStyles;
     if (Platform.OS === 'ios') {

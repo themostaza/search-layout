@@ -32,6 +32,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** Override headerTintColor for the cancel button / clear button **/
     searchInputTintColor?: string;
 
+    /** The Header heaight should account the statusbar height when it's traslucent */
+    traslucentStatusbar?: boolean;
+
     /** Alternative to using children to render the results **/
     renderResults?: () => React.ReactElement | null;
   }

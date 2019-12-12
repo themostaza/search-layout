@@ -34,6 +34,7 @@ export default class SearchLayout extends React.Component {
     return (
       <View style={styles.container}>
         <Header
+          traslucentStatusbar={this.props.traslucentStatusbar}
           backgroundColor={this.props.headerBackgroundColor}
           tintColor={this.props.headerTintColor}
           backButton={Platform.OS === 'android'}
