@@ -14,7 +14,7 @@ declare module 'react-navigation-addon-search-layout' {
     /** Tint color of the header that contains the search bar. Used to color the back buttoni on Android, the cancel button on iOS, and the color of and ripple around the clear button on Android **/
     headerTintColor?: string;
 
-    /** Cancel button text. Defaults to 'Cancel'. (iOS only) */
+    /** Cancel button text. Defaults to 'Cancel' (iOS only). Set the cancel button accessibility label (Android and iOS) */
     cancelButtonText?: string;
 
     /** Color of the placeholder text that is visible when the user has not entered any input into the search box **/
@@ -31,6 +31,9 @@ declare module 'react-navigation-addon-search-layout' {
 
     /** Override headerTintColor for the cancel button / clear button **/
     searchInputTintColor?: string;
+
+    /** Set a custom accessibility label for the search bar TextInput */
+    searchInputAccessibilityLabel?: string;
 
     /** The Header heaight should account the statusbar height when it's traslucent */
     traslucentStatusbar?: boolean;

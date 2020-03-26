@@ -28,6 +28,7 @@ export default class SearchBar extends React.PureComponent {
           ref={view => {
             this._textInput = view;
           }}
+          accessibilityLabel={this.props.accessibilityLabel}
           placeholder={this.props.placeholderText}
           placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
           value={this.state.text}
@@ -50,6 +51,7 @@ export default class SearchBar extends React.PureComponent {
               style={{ padding: 5 }}
               background={Touchable.Ripple(this.props.tintColor, true)}
               accessibilityRole="button"
+              accessibilityLabel={this.props.cancelButtonText}
             >
               <Ionicons
                 name="md-close"

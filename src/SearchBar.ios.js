@@ -153,6 +153,7 @@ export default class SearchBar extends React.PureComponent {
             onLayout={this._handleLayoutCancelButton}
             onPress={this._handlePressCancelButton}
             accessibilityRole="button"
+            accessibilityLabel={this.props.cancelButtonText}
           >
             <Text
               style={{

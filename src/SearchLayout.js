@@ -40,6 +40,7 @@ export default class SearchLayout extends React.Component {
           backButton={Platform.OS === 'android'}
         >
           <SearchBar
+            accessibilityLabel={this.props.searchInputAccessibilityLabel}
             onChangeQuery={this._handleChangeQuery}
             onSubmit={this._handleSubmit}
             placeholderTextColor={this.props.searchInputPlaceholderTextColor}
