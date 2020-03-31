@@ -97,6 +97,11 @@ export default class Header extends React.PureComponent {
   };
 
   _maybeRenderBackButton = () => {
+    if (this.props.BackButtonComponent) {
+      const { BackButtonComponent } = this.props;
+      return <BackButtonComponent />;
+    }
+
     if (!this.props.backButton) {
       return;
     }

@@ -38,6 +38,7 @@ export default class SearchLayout extends React.Component {
           backgroundColor={this.props.headerBackgroundColor}
           tintColor={this.props.headerTintColor}
           backButton={Platform.OS === 'android'}
+          BackButtonComponent={this.props.BackButtonComponent}
         >
           <SearchBar
             accessibilityLabel={this.props.searchInputAccessibilityLabel}

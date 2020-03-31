@@ -38,6 +38,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** The Header heaight should account the statusbar height when it's traslucent */
     traslucentStatusbar?: boolean;
 
+    /** Set a custom back button component to be shown in the header */
+    BackButtonComponent?: React.ReactElement | null;
+
     /** Alternative to using children to render the results **/
     renderResults?: () => React.ReactElement | null;
   }
