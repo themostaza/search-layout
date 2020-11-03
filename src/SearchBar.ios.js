@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Dimensions,
   LayoutAnimation,
@@ -9,13 +9,13 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
-} from 'react-native';
-import { withNavigation } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+} from "react-native";
+import { withNavigation } from "react-navigation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Layout = {
   window: {
-    width: Dimensions.get('window').width,
+    width: Dimensions.get("window").width,
   },
 };
 const SearchContainerHorizontalMargin = 10;
@@ -31,8 +31,8 @@ const SearchIcon = () => (
 @withNavigation
 class PlaceholderButtonSearchBar extends React.PureComponent {
   static defaultProps = {
-    placeholder: 'Search',
-    placeholderTextColor: '#ccc',
+    placeholder: "Search",
+    placeholderTextColor: "#ccc",
   };
 
   render() {
@@ -59,25 +59,27 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
   }
 
   _handlePress = () => {
-    this.props.navigator.push('search');
+    this.props.navigator.push("search");
   };
 }
 
 @withNavigation
 export default class SearchBar extends React.PureComponent {
   state = {
-    text: '',
+    text: "",
     showCancelButton: false,
     inputWidth: SearchContainerWidth,
   };
 
   componentDidMount() {
     requestAnimationFrame(() => {
-      this._textInput.focus();
+      if (this.props.autoFocus) {
+        this._textInput.focus();
+      }
     });
   }
 
-  _handleLayoutCancelButton = e => {
+  _handleLayoutCancelButton = (e) => {
     if (this.state.showCancelButton) {
       return;
     }
@@ -116,7 +118,7 @@ export default class SearchBar extends React.PureComponent {
       <View style={styles.container}>
         <View style={[styles.searchContainer, { width: inputWidth }]}>
           <TextInput
-            ref={view => {
+            ref={(view) => {
               this._textInput = view;
             }}
             clearButtonMode="while-editing"
@@ -127,7 +129,7 @@ export default class SearchBar extends React.PureComponent {
             returnKeyType="search"
             placeholder={this.props.placeholderText}
             accessibilityRole="search"
-            placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
+            placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
             onSubmitEditing={this._handleSubmit}
             allowFontScaling={false}
             style={[styles.searchInput, searchInputStyle]}
@@ -139,8 +141,8 @@ export default class SearchBar extends React.PureComponent {
         <View
           key={
             showCancelButton
-              ? 'visible-cancel-button'
-              : 'layout-only-cancel-button'
+              ? "visible-cancel-button"
+              : "layout-only-cancel-button"
           }
           style={[
             styles.buttonContainer,
@@ -158,11 +160,11 @@ export default class SearchBar extends React.PureComponent {
             <Text
               style={{
                 fontSize: 17,
-                color: this.props.tintColor || '#007AFF',
+                color: this.props.tintColor || "#007AFF",
               }}
               allowFontScaling={false}
             >
-              {this.props.cancelButtonText || 'Cancel'}
+              {this.props.cancelButtonText || "Cancel"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -170,7 +172,7 @@ export default class SearchBar extends React.PureComponent {
     );
   }
 
-  _handleChangeText = text => {
+  _handleChangeText = (text) => {
     this.setState({ text });
     this.props.onChangeQuery && this.props.onChangeQuery(text);
   };
@@ -193,16 +195,16 @@ export default class SearchBar extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   buttonContainer: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     top: 0,
     paddingTop: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   button: {
     paddingRight: 17,
@@ -211,14 +213,14 @@ const styles = StyleSheet.create({
   searchContainer: {
     height: 30,
     width: SearchContainerWidth,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: "#f2f2f2",
     borderRadius: 5,
     marginHorizontal: SearchContainerHorizontalMargin,
     marginTop: 10,
     paddingLeft: 27,
   },
   searchIconContainer: {
-    position: 'absolute',
+    position: "absolute",
     left: 7,
     top: 6,
     bottom: 0,

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import SearchBar from './SearchBar';
-import Header from './Header';
+import React from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import SearchBar from "./SearchBar";
+import Header from "./Header";
 
-const DEFAULT_TINT_COLOR = Platform.OS === 'ios' ? '#007AFF' : '#000';
+const DEFAULT_TINT_COLOR = Platform.OS === "ios" ? "#007AFF" : "#000";
 
 export default class SearchLayout extends React.Component {
   static SearchBar = SearchBar;
@@ -12,20 +12,20 @@ export default class SearchLayout extends React.Component {
 
   static defaultProps = {
     debounce: 500,
-    headerBackgroundColor: '#fff',
+    headerBackgroundColor: "#fff",
     headerTintColor: DEFAULT_TINT_COLOR,
   };
 
   state = {
-    q: '',
+    q: "",
   };
 
-  _handleSubmit = q => {
+  _handleSubmit = (q) => {
     this.props.onSubmit && this.props.onSubmit(q);
   };
 
   // TODO: debounce
-  _handleChangeQuery = q => {
+  _handleChangeQuery = (q) => {
     this.props.onChangeQuery && this.props.onChangeQuery(q);
     this.setState({ q });
   };
@@ -37,10 +37,11 @@ export default class SearchLayout extends React.Component {
           traslucentStatusbar={this.props.traslucentStatusbar}
           backgroundColor={this.props.headerBackgroundColor}
           tintColor={this.props.headerTintColor}
-          backButton={Platform.OS === 'android'}
+          backButton={Platform.OS === "android"}
           BackButtonComponent={this.props.BackButtonComponent}
         >
           <SearchBar
+            autoFocus={this.props.autoFocus}
             accessibilityLabel={this.props.searchInputAccessibilityLabel}
             onChangeQuery={this._handleChangeQuery}
             onSubmit={this._handleSubmit}
