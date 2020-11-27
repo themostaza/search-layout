@@ -26,6 +26,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** Color of text that the user enters into the search box **/
     searchInputTextColor?: string;
 
+    /** Font size of text that the user enters into the search box **/
+    searchInputTextSize?: number;
+
     /** Underline color of the text input on Android **/
     searchInputUnderlineColorAndroid?: string;
 

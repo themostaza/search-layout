@@ -48,6 +48,7 @@ export default class SearchLayout extends React.Component {
             placeholderTextColor={this.props.searchInputPlaceholderTextColor}
             textColor={this.props.searchInputTextColor}
             selectionColor={this.props.searchInputSelectionColor}
+            textSize={this.props.searchInputTextSize}
             underlineColorAndroid={
               this.props.searchInputUnderlineColorAndroid ||
               this.props.headerBackgroundColor
